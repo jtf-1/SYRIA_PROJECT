@@ -3823,6 +3823,7 @@ function SEF_RadioMenuSetup()
     --////Setup Top Level Menus
    
    DynamicZoneMain = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Dynamic Zone", nil)
+   
    --BFMACMMENU = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "BFM/ACM Options", nil)
 
 	--////Setup Submenu For Support Requests
@@ -3879,7 +3880,7 @@ function SEF_RadioMenuSetup()
   RemoveBlueBaseCAP  = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Remove BLUE BASECAP", AdminOptions, function() SEF_BASECAP_REMOVE () end, nil)
   RespawnBlueBaseCAP  = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Respawn BLUE BASECAP", AdminOptions, function() SEF_BASECAP_RESPAWN () end, nil)
 	
-	--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	--////CAP FLIGHTS
 	--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
