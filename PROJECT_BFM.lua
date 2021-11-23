@@ -37,9 +37,8 @@ wvr29S = SPAWN:New( "AI WVR Mig-29S" )
 wvrM31 = SPAWN:New( "AI WVR Mig-31" )
 wvrS25 = SPAWN:New( "AI WVR Su-25" )
 wvrS27 = SPAWN:New( "AI WVR Su-27" )
---wvrS34 = SPAWN:New( "AI WVR Su-34" )
 
---[[
+
 --BVR WEST
 bvr14A = SPAWN:New( "AI BVR F-14A" )
 bvr14B = SPAWN:New( "AI BVR F-14B" )
@@ -51,15 +50,14 @@ bvrM2K = SPAWN:New( "AI BVR M-2000" )
 
 --BVR EAST
 bvrJ17 = SPAWN:New( "AI BVR JF-17" )
-bvrM21 = SPAWN:New( "AI BVR Mig-21" )
+--bvrM21 = SPAWN:New( "AI BVR Mig-21" )
 bvrM23 = SPAWN:New( "AI BVR Mig-23" )
 bvr29A = SPAWN:New( "AI BVR Mig-29A" )
 bvr29S = SPAWN:New( "AI BVR Mig-29S" )
 bvrM31 = SPAWN:New( "AI BVR Mig-31" )
-bvrS25 = SPAWN:New( "AI BVR Su-25" )
+--bvrS25 = SPAWN:New( "AI BVR Su-25" )
 bvrS27 = SPAWN:New( "AI BVR Su-27" )
-bvrS34 = SPAWN:New( "AI BVR Su-34" )
-]]--
+
 --[[
 --- MISSILE TRAINER
 -- Missile trainer will destroy missiles prior to hitting target client
@@ -96,15 +94,14 @@ function SpawnAdv(adv,qty,group,rng) -- spawns adversary aircraft selected in BF
   pos = group:GetPointVec2() -- client group's position on map
   spawnPt = pos:Translate(range, hdg, true) -- calculate the point at which to spawn the adversary group
   spawnVec3 = spawnPt:GetVec3() -- convert point to Vec3
- 
-  adv:InitGrouping(qty) -- set qty of adversaries to spawn
-  adv:InitHeading(hdg + 180) -- set heading to point at client
-  adv:OnSpawnGroup(
+    adv:InitGrouping(qty) -- set qty of adversaries to spawn
+    adv:InitHeading(hdg + 180) -- set heading to point at client
+    adv:OnSpawnGroup(
       function ( SpawnGroup )
         local CheckAdversary = SCHEDULER:New( SpawnGroup, -- add schedule, 5 sec interval, to check whether spawned AC has left the BFM/ACM zone
         function (CheckAdversary)
           if SpawnGroup then
-            if (SpawnGroup:IsNotInZone(BfmAcmZoneMenu) or (bfmAcmAdvRemove)) then -- remove adversary group if it has left the zone, or Admin has selected the remove all command
+            if (SpawnGroup:IsNotInZone(BfmAcmZoneExit) or (bfmAcmAdvRemove)) then -- remove adversary group if it has left the zone, or Admin has selected the remove all command
               MESSAGE:New(bfmAcmAdvRemove and "All BFM/ACM adversaries removed" or "BFM/ACM adversary left zone and was removed"):ToAll()
               SpawnGroup:Destroy()
               SpawnGroup = nil
@@ -114,7 +111,7 @@ function SpawnAdv(adv,qty,group,rng) -- spawns adversary aircraft selected in BF
         {}, 0, 5 )
       end
     )
-  adv:SpawnFromVec3(spawnVec3)
+    adv:SpawnFromVec3(spawnVec3)
   
   MESSAGE:New("Adversary spawned."):ToGroup(group)
  

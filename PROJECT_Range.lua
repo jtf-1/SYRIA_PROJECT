@@ -23,7 +23,7 @@ local bombtarget_WE01 = {"WE01_village1",
   }
 
 Range_ME01 = RANGE:New("ME01 Range")
-Range_ME01:AddBombingTargets(bombtarget_WE01, 50)
+Range_ME01:AddBombingTargets(bombtarget_WE01, 25)
 Range_ME01:SetSoundfilesPath("Range Soundfiles/")
 --Range_ME01:SetInstructorRadio(jtf1RangeControlCommon)
 Range_ME01:SetRangeControl(250.100)
@@ -43,9 +43,10 @@ local bombtarget_VE91={"RANGE_VE91_SOUTH_bombing",
   }
 
 Range_VE91 = RANGE:New("VE91 Range")
-fouldist_VE91 = Range_VE91:GetFoullineDistance("RANGE_VE91_strafepit_A", "RANGE_VE91_FoulLine_AB")
-Range_VE91:AddStrafePit(strafepit_VE91_NORTH, 3000, 300, nil, true, 20, fouldist_VE91)
-Range_VE91:AddStrafePit(strafepit_VE91_SOUTH, 3000, 300, nil, true, 20, fouldist_VE91)
+fouldist_VE91AB = Range_VE91:GetFoullineDistance("RANGE_VE91_strafepit_A", "RANGE_VE91_FoulLine_AB")
+fouldist_VE91CD = Range_VE91:GetFoullineDistance("RANGE_VE91_strafepit_A", "RANGE_VE91_FoulLine_CD")
+Range_VE91:AddStrafePit(strafepit_VE91_NORTH, 3000, 300, nil, true, 20, fouldist_VE91AB)
+Range_VE91:AddStrafePit(strafepit_VE91_SOUTH, 3000, 300, nil, true, 20, fouldist_VE91CD)
 Range_VE91:AddBombingTargets(bombtarget_VE91, 50)
 Range_VE91:SetSoundfilesPath("Range Soundfiles/")
 --Range_VE91:SetInstructorRadio(jtf1RangeControlCommon)

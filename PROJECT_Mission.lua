@@ -3837,12 +3837,12 @@ function SEF_RadioMenuSetup()
 	SupportMenuDRONE = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Request MQ-9 Reaper Drone", SupportMenuMain)
 	
 		--////Objective Options
-  ObjectiveInfo = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Objective Info", DynamicZoneMain)
-  missionCommands.addCommandForCoalition(coalition.side.BLUE, "Check Current Objective", ObjectiveInfo, function() CheckObjectiveRequest() end, nil)
-  missionCommands.addCommandForCoalition(coalition.side.BLUE, "Target Report", ObjectiveInfo, function() TargetReport() end, nil)
-  missionCommands.addCommandForCoalition(coalition.side.BLUE, "Smoke Current Objective", ObjectiveInfo, function() SEF_TargetSmoke() end, nil)
+  --ObjectiveInfo = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Objective Info", DynamicZoneMain)
+ -- missionCommands.addCommandForCoalition(coalition.side.BLUE, "Check Current Objective", ObjectiveInfo, function() CheckObjectiveRequest() end, nil)
+ -- missionCommands.addCommandForCoalition(coalition.side.BLUE, "Target Report", ObjectiveInfo, function() TargetReport() end, nil)
+ -- missionCommands.addCommandForCoalition(coalition.side.BLUE, "Smoke Current Objective", ObjectiveInfo, function() SEF_TargetSmoke() end, nil)
   --ScarletDawnPhaseCheck  = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Check Battle Phase", ObjectiveInfo, function() SEF_BattlePhaseCheck() end, nil)
-  ScarletDawnSkipScenario  = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Skip This Mission", ObjectiveInfo, function() SEF_SkipScenario() end, nil)
+ -- ScarletDawnSkipScenario  = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Skip This Mission", ObjectiveInfo, function() SEF_SkipScenario() end, nil)
 	
 	--////AI Support Flights Mission Abort Codes
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Abort Mission Fighter Screen", SupportMenuAbort, function() AbortCAPMission() end, nil)	
