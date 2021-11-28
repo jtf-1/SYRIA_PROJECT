@@ -3853,7 +3853,7 @@ function SEF_RadioMenuSetup()
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Abort Mission MQ-9 Reaper Drone", SupportMenuAbort, function() AbortDroneMission() end, nil)	
 	
 	--////Syria Mission Options
-	SyriaOptions = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Syria Options", DynamicZoneMain)
+	--SyriaOptions = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Syria Options", DynamicZoneMain)
 	SyriaCAPOptions = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Syria CAP Options", DynamicZoneMain)
 	--SyriaSNDOptions = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Syria Sound Options", SyriaOptions)
 	SyriaBLUECAPToggle = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Toggle Allied AI CAP Flights", SyriaCAPOptions, function() SEF_BLUESQUADRONSTOGGLE() end, nil)
