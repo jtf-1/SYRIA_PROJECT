@@ -663,7 +663,84 @@ function SEF_SetukasSword()
 		REDSQUADRON5_DATA[2].Vec2 = nil
 		REDSQUADRON5_DATA[2].TimeStamp = nil	
 	end
-		
+	
+  --////HARD RED SQUADRON
+  if ( GROUP:FindByName(HARDSQUADRON2GROUPNAME) ~= nil and GROUP:FindByName(HARDSQUADRON2GROUPNAME):IsAlive() ) then        
+    
+    local SpawnUnits = GROUP:FindByName(HARDSQUADRON2GROUPNAME):GetUnits()
+    
+    for UnitID, UnitData in pairs( SpawnUnits ) do
+      
+      local SpawnUnit = UnitData
+      local SpawnUnitName = SpawnUnit:GetName()     
+      
+      --////Existing Timestamp
+      if ( HARDSQUADRON2_DATA[UnitID].Vec2 ~= nil and HARDSQUADRON2_DATA[UnitID].TimeStamp ~= nil ) then
+        --////On Ground And Stationary
+        if SpawnUnit:InAir() == false and SpawnUnit:GetVelocityKMH() < 1 then
+          local NewVec2 = SpawnUnit:GetVec2()
+          if HARDSQUADRON2_DATA[UnitID].Vec2.x == NewVec2.x and HARDSQUADRON2_DATA[UnitID].Vec2.y == NewVec2.y then
+            if HARDSQUADRON2_DATA[UnitID].TimeStamp + CleanupTime < timer.getTime() then           
+              env.info("HARDSQUADRON2 Monitor - Deleting: "..SpawnUnitName.." Due To Inactivity", false)
+              HARDSQUADRON2_DATA[UnitID].Vec2 = nil
+              HARDSQUADRON2_DATA[UnitID].TimeStamp = nil
+              Unit.getByName(SpawnUnit:GetName()):destroy()           
+            end
+          else
+            HARDSQUADRON2_DATA[UnitID].TimeStamp = timer.getTime()
+            HARDSQUADRON2_DATA[UnitID].Vec2 = SpawnUnit:GetVec2()
+          end       
+        --////On Carrier Deck And Stationary - Special For Carrier Planes, Don't Base On Vec Point Just Check Speed, Altitude And Timestamp
+        elseif (SpawnUnit:InAir() == false and (string.find(SpawnUnitName, "Hard2"))) then
+          if (( SpawnUnit:GetVelocityKMH() > 1 and SpawnUnit:GetVelocityKMH() < 41 ) and ( SpawnUnit:GetAltitude() > 15 and SpawnUnit:GetAltitude() < 25 )) then 
+            if HARDSQUADRON2_DATA[UnitID].TimeStamp + CleanupTime < timer.getTime() then                                   
+              env.info("HARDSQUADRON2 Monitor - Deleting Navy Unit: "..SpawnUnitName.." Due To Inactivity", false)
+              HARDSQUADRON2_DATA[UnitID].Vec2 = nil
+              HARDSQUADRON2_DATA[UnitID].TimeStamp = nil           
+              Unit.getByName(SpawnUnit:GetName()):destroy()           
+            end
+          else
+            HARDSQUADRON2_DATA[UnitID].TimeStamp = timer.getTime()
+            HARDSQUADRON2_DATA[UnitID].Vec2 = SpawnUnit:GetVec2()          
+          end     
+        --////In Air Or On Ground And Moving On Taxi/Takeoff Etc
+        else
+          HARDSQUADRON2_DATA[UnitID].Vec2 = nil
+          HARDSQUADRON2_DATA[UnitID].TimeStamp = nil
+        end
+      --////No Existing Timestamp
+      else
+        --////Not In Air
+        if SpawnUnit:InAir() == false then          
+          if SpawnUnit:GetVelocityKMH() < 1 then
+            HARDSQUADRON2_DATA[UnitID].TimeStamp = timer.getTime()
+            HARDSQUADRON2_DATA[UnitID].Vec2 = SpawnUnit:GetVec2()
+          --Special for Carrier Planes
+          elseif (string.find(SpawnUnitName, "Hard2")) then
+            if (( SpawnUnit:GetVelocityKMH() > 1 and SpawnUnit:GetVelocityKMH() < 41 ) and ( SpawnUnit:GetAltitude() > 15 and SpawnUnit:GetAltitude() < 25 )) then
+              HARDSQUADRON2_DATA[UnitID].TimeStamp = timer.getTime()
+              HARDSQUADRON2_DATA[UnitID].Vec2 = SpawnUnit:GetVec2()
+            end         
+          else
+            HARDSQUADRON2_DATA[UnitID].TimeStamp = nil
+            HARDSQUADRON2_DATA[UnitID].Vec2 = nil
+          end
+        --////In Air
+        else
+          HARDSQUADRON2_DATA[UnitID].TimeStamp = nil
+          HARDSQUADRON2_DATA[UnitID].Vec2 = nil          
+        end
+      end
+    end     
+  --////REDSQUADRON2 NOT ALIVE SCRUB DATA
+  else
+    HARDSQUADRON2_DATA[1].Vec2 = nil
+    HARDSQUADRON2_DATA[1].TimeStamp = nil
+    HARDSQUADRON2_DATA[2].Vec2 = nil
+    HARDSQUADRON2_DATA[2].TimeStamp = nil    
+  end
+
+	
 	--////BLUE SQUADRON 1
 	if ( GROUP:FindByName(BLUESQUADRON1GROUPNAME) ~= nil and GROUP:FindByName(BLUESQUADRON1GROUPNAME):IsAlive() ) then				
 		

@@ -90,7 +90,7 @@ BluePatrolWaypointInitial = 18520
 EngagementDistance = 90000
 BlueEngagementDistance = 40000
 
-CleanupTime = 300
+CleanupTime = 180
 
 
 GammaStatus = "Gamma Squadron\nAirspace Is Controlled By Syria\n"
