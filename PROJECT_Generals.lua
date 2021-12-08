@@ -53,8 +53,8 @@ SyAAFAirforceGeneralName	= "General Issam Hallaq"
 
 BlueStrikeFrequencyMin 	= 1200	
 BlueStrikeFrequencyMax 	= 2400	
-RedStrikeFrequencyMin 	= 3600	
-RedStrikeFrequencyMax 	= 7200
+RedStrikeFrequencyMin 	= 3000	
+RedStrikeFrequencyMax 	= 4000
 
 SYAAFAN26BGROUPNAME = ""
 IRIAFMI8GROUPNAME = ""
