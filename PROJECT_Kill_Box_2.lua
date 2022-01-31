@@ -71,7 +71,8 @@ KILLBOX.threats = {
   { spawnTemplate = "kbSAM-Rapier",     menuText = "Activate Rapier", threatText = "Rapier" },
   { spawnTemplate = "kbSAM-Hawk",       menuText = "Activate Hawk", threatText = "Hawk" },
   { spawnTemplate = "kbSAM-AAA-IRsam",  menuText = "Activate AAA/IR SAM", threatText = "AAA/IR"},
-}
+  { spawnTemplate = "kbConvoy-Armed",  menuText = "Activate Armed Convoy", threatText = "AAA/IR"},
+  }
 
 
 ---------------------------------------------------------------------------------------------------

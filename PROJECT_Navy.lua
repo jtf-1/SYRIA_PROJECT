@@ -11,21 +11,7 @@ if ( Group.getByName("LHA-1") ) then
 GROUP:FindByName("LHA-1"):PatrolRoute()
 end
 ]]--
-if ( Group.getByName("Tripoli-Sub") ) then
-GROUP:FindByName("Tripoli-Sub"):PatrolRoute()
-end
 
-if ( Group.getByName("Tartus-Speedboats") ) then
-GROUP:FindByName("Tartus-Speedboats"):PatrolRoute()
-end
-
-if ( Group.getByName("Latakia - Navy") ) then
-	GROUP:FindByName("Latakia - Navy"):PatrolRoute()
-end
-
-if ( Group.getByName("Tartus - Navy") ) then
-	GROUP:FindByName("Tartus - Navy"):PatrolRoute()
-end
 
 --[[
 function SpawnSupport (SupportSpawn) -- spawnobject, spawnzone
@@ -56,9 +42,9 @@ end -- function
 ]]--
 -------------------------------------------------------------------------------------------
 
----------------------
--- RECOVERY TANKER --
----------------------
+-------------------------------
+-- ROOSEVELT RECOVERY TANKER --
+-------------------------------
 
 local ArcoRoosevelt=RECOVERYTANKER:New(UNIT:FindByName("CVN-71 Theodore Roosevelt"), "Tanker_S3-B_Arco1")
 ArcoRoosevelt:SetTakeoffAir()
@@ -67,9 +53,9 @@ ArcoRoosevelt:SetRadio(251.500, "AM")
 ArcoRoosevelt:SetCallsign(2,1)
 ArcoRoosevelt:Start()
 
----------------------
-    -- CARRIER --
----------------------
+---------------------------
+    -- ROOSEVELT CARRIER --
+---------------------------
 
 local airbossRoosevelt=AIRBOSS:New("CVN-71 Theodore Roosevelt")
 airbossRoosevelt:SetSoundfilesFolder("Airboss Soundfiles/")
@@ -113,7 +99,7 @@ airbossRoosevelt:AddRecoveryWindow("21:15", "21:45", 3, nil, true, 30)
 airbossRoosevelt:AddRecoveryWindow("22:15", "22:45", 3, nil, true, 30)
 ]]--
 airbossRoosevelt:SetPatrolAdInfinitum(true)
-airbossRoosevelt:SetDefaultPlayerSkill("Flight Student")
+airbossRoosevelt:SetDefaultPlayerSkill("TOPGUN Graduate")
 airbossRoosevelt:SetWelcomePlayers(false)
 airbossRoosevelt:SetMenuSmokeZones(false)
 airbossRoosevelt:SetMenuMarkZones(false)
@@ -128,6 +114,54 @@ airbossRoosevelt:SetAutoSave(nil, "Syria_Roosevelt_LSOgrades.csv")
 --airbossRoosevelt:TraceClass("AIRBOSS")
 
 airbossRoosevelt:Start()
+
+
+-------------------------------
+-- FORRESTAL RECOVERY TANKER --
+-------------------------------
+
+local ArcoForrestal=RECOVERYTANKER:New(UNIT:FindByName("CV-59 Forrestal"), "Tanker_S3-B_Arco1")
+ArcoForrestal:SetTakeoffAir()
+ArcoForrestal:SetTACAN(107, "ARC")
+ArcoForrestal:SetRadio(251.750, "AM")
+ArcoForrestal:SetCallsign(2,4)
+ArcoForrestal:Start()
+
+---------------------------
+    -- FORRESTAL CARRIER --
+---------------------------
+
+local airbossForrestal=AIRBOSS:New("CV-59 Forrestal")
+airbossForrestal:SetSoundfilesFolder("Airboss Soundfiles/")
+airbossForrestal:SetVoiceOversLSOByRaynor()
+airbossForrestal:SetVoiceOversMarshalByRaynor()
+airbossForrestal:SetRespawnAI(true)
+airbossForrestal:SetStaticWeather(true)
+airbossForrestal:SetRecoveryTanker(ArcoForrestal)
+airbossForrestal:SetTACAN(59, "X", "NJVF")
+airbossForrestal:SetICLS(9, "NJVF")
+airbossForrestal:SetBeaconRefresh(300)
+airbossForrestal:SetLSORadio(308.000, AM)
+airbossForrestal:SetMarshalRadio(285.000, AM)
+airbossForrestal:SetCarrierControlledArea(50)
+airbossForrestal:SetCarrierControlledZone(10)
+airbossForrestal:SetCollisionDistance(10)
+airbossForrestal:SetPatrolAdInfinitum(true)
+airbossForrestal:SetDefaultPlayerSkill("TOPGUN Graduate")
+airbossForrestal:SetWelcomePlayers(false)
+airbossForrestal:SetMenuSmokeZones(false)
+airbossForrestal:SetMenuMarkZones(false)
+airbossForrestal:SetMenuRecovery(45, 30, true, 30)
+airbossForrestal:SetAirbossNiceGuy(true)
+airbossForrestal:Load(nil, "Syria_Forrestal_LSOgrades.csv")
+airbossForrestal:SetAutoSave(nil, "Syria_Forrestal_LSOgrades.csv")
+
+--airbossForrestal:SetDebugModeON()
+--airbossForrestal:TraceOnOff(true)
+--airbossForrestal:TraceLevel(3)
+--airbossForrestal:TraceClass("AIRBOSS")
+
+airbossForrestal:Start()
 
 ---------------------
     -- TARAWA --

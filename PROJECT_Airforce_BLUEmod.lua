@@ -73,8 +73,8 @@ RedRespawnTimerInitialMax = 60
 
 BlueRespawnTimerMin = 600
 BlueRespawnTimerMax = 1000
-RedRespawnTimerMin  = 700
-RedRespawnTimerMax  = 1000
+RedRespawnTimerMin  = 1500
+RedRespawnTimerMax  = 2700
 
 RedFlightLevelMin = 7
 RedFlightLevelMax = 13
@@ -188,17 +188,11 @@ CoastalCAP = {
 
 --////F-14A ~9.1% Chance
 IRIAFAirForceCAP = { 
-				   "IRIAF F-4E", 
-				   "IRIAF F-5E-3", 
 				   "IRIAF MiG-21Bis", 
 				   "IRIAF MiG-29A", 
-				   "IRIAF Mirage F1", 
 				   "IRIAF F-4E", 
 				   "IRIAF F-5E-3", 
-				   "IRIAF MiG-21Bis", 
-				   "IRIAF MiG-29A", 
 				   "IRIAF Mirage F1",
-				   "IRIAF F-14A", 
 				   }
 
 --////MiG-31 ~5.9% Chance
@@ -208,18 +202,6 @@ VVSAirForcesCAP = {
 				  "VVS MiG-29S", 
 				  "VVS MiG-23MLD", 
 				  "VVS MiG-25PD",					 
-				  "VVS Su-27", 
-				  "VVS Su-30", 
-				  "VVS Su-33",
-				  "VVS MiG-21Bis", 
-				  "VVS MiG-29A", 
-				  "VVS MiG-29S", 
-				  "VVS MiG-23MLD", 
-				  "VVS MiG-25PD",					 
-				  "VVS Su-27", 
-				  "VVS Su-30", 
-				  "VVS Su-33",	
-				  "VVS MiG-31", 
 				  }
 
 --////MiG-31 or F-14A ~13.3% Chance
@@ -757,7 +739,7 @@ function SEF_REDSQUADRON3_SPAWN(DepartureAirbaseName, DestinationAirbaseName)
 		end		
 		
 		REDSQUADRON3 = SPAWN:NewWithAlias("SyAAF MiG-29A", RedSquadronName3)
-							:InitRandomizeTemplate(CombinedRedCAP)								
+							:InitRandomizeTemplate(VVSAirForcesCAP)								
 		
 		:OnSpawnGroup(
 			function( SpawnGroup )						
@@ -1153,7 +1135,7 @@ function SEF_REDSQUADRON4_SPAWN(DepartureAirbaseName, DestinationAirbaseName)
 		end		
 		
 		REDSQUADRON4 = SPAWN:NewWithAlias("SyAAF MiG-29A", RedSquadronName4)
-							:InitRandomizeTemplate(CombinedRedCAP)																
+							:InitRandomizeTemplate(IRIAFAirForceCAP)																
 		
 		:OnSpawnGroup(
 			function( SpawnGroup )						
@@ -2045,31 +2027,31 @@ function SEF_REDSQUADRON3_DEPLOYMENT()
 
 	if ( Airbase.getByName("Rene Mouawad"):getCoalition() == 1 and Airbase.getByName("Al Qusayr"):getCoalition() == 1 and Airbase.getByName("Shayrat"):getCoalition() == 1 and Airbase.getByName("Tiyas"):getCoalition() == 1 ) then
 		--Case 1111: Set Gamma To Rene Mouawad and Patrol Rene Mouawad, Hold The Forward Line
-		GammaPrimaryAirbase = "Rene Mouawad"
+		GammaPrimaryAirbase = "Al Qusayr"
 		GammaDestinationAirbase = "Rene Mouawad"
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() == 1 and Airbase.getByName("Al Qusayr"):getCoalition() == 1 and Airbase.getByName("Shayrat"):getCoalition() == 1 and Airbase.getByName("Tiyas"):getCoalition() ~= 1 ) then
 		--Case 1110: Set Gamma To Rene Mouawad and Patrol Rene Mouawad, Hold The Forward Line
-		GammaPrimaryAirbase = "Rene Mouawad"
+		GammaPrimaryAirbase = "Al Qusayr"
 		GammaDestinationAirbase = "Tiyas"
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() == 1 and Airbase.getByName("Al Qusayr"):getCoalition() == 1 and Airbase.getByName("Shayrat"):getCoalition() ~= 1 and Airbase.getByName("Tiyas"):getCoalition() == 1 ) then
 		--Case 1101: Set Gamma To Rene Mouawad and Patrol Rene Mouawad, Hold The Forward Line
-		GammaPrimaryAirbase = "Rene Mouawad"
+		GammaPrimaryAirbase = "Al Qusayr"
 		GammaDestinationAirbase = "Shayrat"
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() == 1 and Airbase.getByName("Al Qusayr"):getCoalition() == 1 and Airbase.getByName("Shayrat"):getCoalition() ~= 1 and Airbase.getByName("Tiyas"):getCoalition() ~= 1 ) then
 		--Case 1100: Set Gamma To Rene Mouawad and Patrol Rene Mouawad, Hold The Forward Line
-		GammaPrimaryAirbase = "Rene Mouawad"
+		GammaPrimaryAirbase = "Al Qusayr"
 		GammaDestinationAirbase = "Tiyas"
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() == 1 and Airbase.getByName("Al Qusayr"):getCoalition() ~= 1 and Airbase.getByName("Shayrat"):getCoalition() == 1 and Airbase.getByName("Tiyas"):getCoalition() == 1 ) then
 		--Case 1011: Set Gamma To Rene Mouawad and Patrol Rene Mouawad, Hold The Forward Line
-		GammaPrimaryAirbase = "Rene Mouawad"
+		GammaPrimaryAirbase = "Shayrat"
 		GammaDestinationAirbase = "Al Qusayr"
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() == 1 and Airbase.getByName("Al Qusayr"):getCoalition() ~= 1 and Airbase.getByName("Shayrat"):getCoalition() == 1 and Airbase.getByName("Tiyas"):getCoalition() ~= 1 ) then
 		--Case 1010: Set Gamma To Rene Mouawad and Patrol Rene Mouawad, Hold The Forward Line
-		GammaPrimaryAirbase = "Rene Mouawad"
+		GammaPrimaryAirbase = "Al Qusayr"
 		GammaDestinationAirbase = "Tiyas"
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() == 1 and Airbase.getByName("Al Qusayr"):getCoalition() ~= 1 and Airbase.getByName("Shayrat"):getCoalition() ~= 1 and Airbase.getByName("Tiyas"):getCoalition() == 1 ) then
 		--Case 1001: Set Gamma To Rene Mouawad and Patrol Rene Mouawad, Hold The Forward Line
-		GammaPrimaryAirbase = "Rene Mouawad"
+		GammaPrimaryAirbase = "Tiyas"
 		GammaDestinationAirbase = "Shayrat"
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() == 1 and Airbase.getByName("Al Qusayr"):getCoalition() ~= 1 and Airbase.getByName("Shayrat"):getCoalition() ~= 1 and Airbase.getByName("Tiyas"):getCoalition() ~= 1 ) then
 		--Case 1000: Set Gamma To Rene Mouawad and Patrol Rene Mouawad, Hold The Forward Line

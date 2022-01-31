@@ -117,7 +117,7 @@ SEF_AIRBASES = {
 	"Wujah Al Hajar"
 }
 
-SEF_OFFLIMITSAIRBASESFORRED 	= { "Ramat David", "Megiddo", "Abu al-Duhur", "Adana Sakirpasa", "Bassel Al-Assad", "Gaziantep", "Hama", "Hatay", "Incirlik", "Jirah", "Kuweires", "Minakh", "Tabqa", "Taftanaz" }
+SEF_OFFLIMITSAIRBASESFORRED 	= { "Aleppo", "Ramat David", "Megiddo", "Abu al-Duhur", "Adana Sakirpasa", "Bassel Al-Assad", "Gaziantep", "Hama", "Hatay", "Incirlik", "Jirah", "Kuweires", "Minakh", "Tabqa", "Taftanaz" }
 							
 SEF_OFFLIMITSAIRBASESFORBLUE 	= { "Palmyra", "Abu al-Duhur", "Adana Sakirpasa", "Bassel Al-Assad", "Gaziantep", "Hama", "Hatay", "Incirlik", "Jirah", "Kuweires", "Minakh", "Tabqa", "Taftanaz"  }
 								
