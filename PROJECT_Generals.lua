@@ -1,4 +1,7 @@
-env.info("Generals Loading", false)
+--//////////////////////////////////////////////////////////
+-- Name: Operation Scarlet Dawn - Generals Module
+-- Author: Surrexen    à¼¼ ã�¤ â—•_â—• à¼½ã�¤    (ã�¥ï½¡â—•â€¿â—•ï½¡)ã�¥ 
+--//////////////////////////////////////////////////////////
 
 --[[
 	"Abu al-Duhur"
@@ -39,22 +42,22 @@ env.info("Generals Loading", false)
 -------------------------------------------------------------------------------------------------------------------------------------------------
 --////VARIABLES
 
---IranianCICName 				= "Major General Seyyed Abdolrahim Mousavi"
+IranianCICName 				= "Major General Seyyed Abdolrahim Mousavi"
 IranianAirforceGeneralName 	= "Brigadier General Aziz Nasirzadeh"
---IranianNavyAdmiralName 		= "Rear Admiral Hossein Khanzadi"
---RussianCICName 				= "General of the Army Valery Vasilyevich Gerasimov"
---RussianAirforceGeneralName 	= "Colonel General Sergei Vladimirovich Surovikin"
---RussianNavyAdmiralName 		= "Admiral Nikolai Yevmenov"
---USAFCICName					= "President Donald Trump"
+IranianNavyAdmiralName 		= "Rear Admiral Hossein Khanzadi"
+RussianCICName 				= "General of the Army Valery Vasilyevich Gerasimov"
+RussianAirforceGeneralName 	= "Colonel General Sergei Vladimirovich Surovikin"
+RussianNavyAdmiralName 		= "Admiral Nikolai Yevmenov"
+USAFCICName					= "President Donald Trump"
 USAFAirforceGeneralName		= "General David Goldfein"
---USAFNavyAdmiralName			= "Admiral Michael Gilday"
---SyAAFCICName				= "Bashar al-Assad"
+USAFNavyAdmiralName			= "Admiral Michael Gilday"
+SyAAFCICName				= "Bashar al-Assad"
 SyAAFAirforceGeneralName	= "General Issam Hallaq"
 
-BlueStrikeFrequencyMin 	= 1200	
-BlueStrikeFrequencyMax 	= 2400	
-RedStrikeFrequencyMin 	= 3000	
-RedStrikeFrequencyMax 	= 4000
+BlueStrikeFrequencyMin 	= 900	
+BlueStrikeFrequencyMax 	= 1200	
+RedStrikeFrequencyMin 	= 1200	
+RedStrikeFrequencyMax 	= 2700
 
 SYAAFAN26BGROUPNAME = ""
 IRIAFMI8GROUPNAME = ""
@@ -66,61 +69,63 @@ VVSTU95MSGROUPNAME = ""
 VVSTU160GROUPNAME = ""
 VVSTU22M3GROUPNAME = ""
 
-CaptureMessageLockout = 0
+CaptureMessageLockout = 300
 
---AutomatedBlueStrikes = 1
+AutomatedBlueStrikes = 1
+
+CustomSoundsEnabled = 0
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 --////TABLES
 
 SEF_AIRBASES = {
-	--"Abu al-Duhur",
-	--"Adana Sakirpasa",
-	--"Aleppo",
-	"Al-Dumayr",
-	"Al Qusayr",
-	"An Nasiriyah",
-	--"Bassel Al-Assad",
-	"Beirut-Rafic Hariri",
-	"Damascus",
-	"Eyn Shemer",
-	--"Gaziantep",
-	"H4",
-	"Haifa",
-	--"Hama",
-	--"Hatay",
-	--"Incirlik",
-	--"Jirah",
-	"King Hussein Air College",
-	"Kiryat Shmona",
-	"Khalkhalah",
-	--"Kuweires",
-	"Marj as Sultan North",
-	"Marj as Sultan South",
-	"Marj Ruhayyil",
-	"Megiddo",
-	"Mezzeh",
-	--"Minakh",
-	"Naqoura",
-	"Palmyra",
-	"Qabr as Sitt",
-	"Ramat David",
-	"Rayak",
-	"Rene Mouawad",
-	"Rosh Pina",
-	"Sayqal",
-	"Shayrat",
-	--"Tabqa",
-	--"Taftanaz",
-	"Tiyas",
-	"Tha'lah",
-	"Wujah Al Hajar"
+  --"Abu al-Duhur",
+  --"Adana Sakirpasa",
+  --"Aleppo",
+  "Al-Dumayr",
+  "Al Qusayr",
+  "An Nasiriyah",
+  --"Bassel Al-Assad",
+  "Beirut-Rafic Hariri",
+  "Damascus",
+  "Eyn Shemer",
+  --"Gaziantep",
+  "H4",
+  "Haifa",
+  --"Hama",
+  --"Hatay",
+  --"Incirlik",
+  --"Jirah",
+  "King Hussein Air College",
+  "Kiryat Shmona",
+  "Khalkhalah",
+  --"Kuweires",
+  "Marj as Sultan North",
+  "Marj as Sultan South",
+  "Marj Ruhayyil",
+  "Megiddo",
+  "Mezzeh",
+  --"Minakh",
+  "Naqoura",
+  "Palmyra",
+  "Qabr as Sitt",
+  "Ramat David",
+  "Rayak",
+  "Rene Mouawad",
+  "Rosh Pina",
+  "Sayqal",
+  "Shayrat",
+  --"Tabqa",
+  --"Taftanaz",
+  "Tiyas",
+  "Tha'lah",
+  "Wujah Al Hajar"
 }
 
-SEF_OFFLIMITSAIRBASESFORRED 	= { "Aleppo", "Ramat David", "Megiddo", "Abu al-Duhur", "Adana Sakirpasa", "Bassel Al-Assad", "Gaziantep", "Hama", "Hatay", "Incirlik", "Jirah", "Kuweires", "Minakh", "Tabqa", "Taftanaz" }
-							
-SEF_OFFLIMITSAIRBASESFORBLUE 	= { "Palmyra", "Abu al-Duhur", "Adana Sakirpasa", "Bassel Al-Assad", "Gaziantep", "Hama", "Hatay", "Incirlik", "Jirah", "Kuweires", "Minakh", "Tabqa", "Taftanaz"  }
-								
+SEF_OFFLIMITSAIRBASESFORRED   = { "Aleppo", "Ramat David", "Megiddo", "Abu al-Duhur", "Adana Sakirpasa", "Bassel Al-Assad", "Gaziantep", "Hama", "Hatay", "Incirlik", "Jirah", "Kuweires", "Minakh", "Tabqa", "Taftanaz" }
+              
+SEF_OFFLIMITSAIRBASESFORBLUE  = { "Palmyra", "Abu al-Duhur", "Adana Sakirpasa", "Bassel Al-Assad", "Gaziantep", "Hama", "Hatay", "Incirlik", "Jirah", "Kuweires", "Minakh", "Tabqa", "Taftanaz"  }
+  							
 CurrentRedAirbases ={}						-- All current red airbases
 CurrentBlueAirbases ={}						-- All current blue airbases
 CurrentNeutralAirbases ={}					-- All current neutral airbases
@@ -563,7 +568,7 @@ function SEF_REDGENERAL_ATTACKAIRBASE(TimeLoop, time)
 	else	
 		AttackUndefended 	= SEF_REDGENERAL_SELECTNEUTRALTARGETAIRBASE()
 		AttackDefended 		= SEF_REDGENERAL_SELECTBLUETARGETAIRBASE()
-		Origin 				= SEF_REDGENERAL_CHOOSEDEPARTUREAIRBASE()	
+		Origin 				= AIRBASE.Syria.Palmyra --SEF_REDGENERAL_CHOOSEDEPARTUREAIRBASE()	
 		
 		if ( AttackUndefended ~= nil and ( AttackDefended ~= nil or AttackDefended == nil) ) then	
 			--Try to capitalise on an undefended (neutral) airbase as priority			
@@ -620,35 +625,35 @@ function SEF_BLUEGENERAL_ATTACKAIRBASE(TimeLoop, time)
 	else	
 		AttackUndefended 	= SEF_BLUEGENERAL_SELECTNEUTRALTARGETAIRBASE()
 		AttackDefended 		= SEF_BLUEGENERAL_SELECTREDTARGETAIRBASE()
-		Origin 				= SEF_BLUEGENERAL_CHOOSEDEPARTUREAIRBASE()
+		Origin 				= AIRBASE.Syria.Ramat_David --SEF_BLUEGENERAL_CHOOSEDEPARTUREAIRBASE()
 
 		if ( AttackUndefended ~= nil and ( AttackDefended ~= nil or AttackDefended == nil) ) then	
 			--Try to capitalise on an undefended (neutral) airbase as priority	
 			if ( AttackUndefended ~= nil and Origin ~= nil ) then
-				trigger.action.outText(USAFAirforceGeneralName.." Is Commencing A Mission To Capture "..AttackUndefended.." From "..Origin, 60)
+				--trigger.action.outText(USAFAirforceGeneralName.." Is Commencing A Mission To Capture "..AttackUndefended.." From "..Origin, 60)
 				SEF_USAFC130SPAWN(Origin, AttackUndefended)				
 			elseif ( AttackUndefended ~= nil and Origin == nil ) then
-				trigger.action.outText(USAFAirforceGeneralName..": No available options for an attack origin on C-130 misson, passing this round",60)				
+				--trigger.action.outText(USAFAirforceGeneralName..": No available options for an attack origin on C-130 misson, passing this round",60)				
 			elseif ( AttackUndefended == nil and Origin ~= nil ) then
-				trigger.action.outText(USAFAirforceGeneralName..": No available options for an attack destination on C-130 misson, passing this round",60)				
+				--trigger.action.outText(USAFAirforceGeneralName..": No available options for an attack destination on C-130 misson, passing this round",60)				
 			else
-				trigger.action.outText(USAFAirforceGeneralName..": No options for an attack destination or an attack origin on C-130 misson, passing this round",60)				
+				--trigger.action.outText(USAFAirforceGeneralName..": No options for an attack destination or an attack origin on C-130 misson, passing this round",60)				
 			end
 		elseif ( AttackUndefended == nil and AttackDefended ~= nil ) then
 			if ( AttackDefended ~= nil and Origin ~= nil ) then
-				trigger.action.outText(USAFAirforceGeneralName.." Is Commencing A Mission To Capture "..AttackDefended.." From "..Origin, 60)
+				--trigger.action.outText(USAFAirforceGeneralName.." Is Commencing A Mission To Capture "..AttackDefended.." From "..Origin, 60)
 				SEF_USAFUH60ASPAWN(Origin, AttackDefended)				
 				--SEF_USAFC130SPAWN(Origin, AttackDefended)
 				--SEF_BLUESTRIKE(Origin, AttackDefended)
 			elseif ( AttackDefended ~= nil and Origin == nil ) then
-				trigger.action.outText(USAFAirforceGeneralName..": No available options for an attack origin on a UH-60A mission, passing this round",60)				
+				--trigger.action.outText(USAFAirforceGeneralName..": No available options for an attack origin on a UH-60A mission, passing this round",60)				
 			elseif ( AttackDefended == nil and Origin ~= nil ) then
-				trigger.action.outText(USAFAirforceGeneralName..": No available options for an attack destination on a UH-60A mission, passing this round",60)				
+				--trigger.action.outText(USAFAirforceGeneralName..": No available options for an attack destination on a UH-60A mission, passing this round",60)				
 			else
-				trigger.action.outText(USAFAirforceGeneralName..": No options for an attack destination or an attack origin on a UH-60A mission, passing this round",60)				
+				--trigger.action.outText(USAFAirforceGeneralName..": No options for an attack destination or an attack origin on a UH-60A mission, passing this round",60)				
 			end
 		else
-			trigger.action.outText(USAFAirforceGeneralName..": No options for a C-130 mission, or a UH-60A mission, passing this round",60)			
+			--trigger.action.outText(USAFAirforceGeneralName..": No options for a C-130 mission, or a UH-60A mission, passing this round",60)			
 		end		
 	end	
 	return time + math.random(BlueStrikeFrequencyMin, BlueStrikeFrequencyMax)	
@@ -2525,7 +2530,6 @@ function SEF_REDSTRIKE(Origin, AttackDefended)
 	end	
 end
 	
---[[	
 function SEF_BLUESTRIKE(Origin, AttackDefended)
 	
 	if ( AutomatedBlueStrikes == 1 ) then
@@ -2540,7 +2544,6 @@ function SEF_BLUESTRIKE(Origin, AttackDefended)
 	else
 	end	
 end
-]]--
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -2694,8 +2697,8 @@ env.info("Surrexen's Event Handlers Loading", false)
 
 --////END TEST CASE
 
-timer.scheduleFunction(SEF_REDGENERAL_ATTACKAIRBASE, 53, timer.getTime() + math.random(900, 1200))
-timer.scheduleFunction(SEF_BLUEGENERAL_ATTACKAIRBASE, 53, timer.getTime() + math.random(900, 1200))
+timer.scheduleFunction(SEF_REDGENERAL_ATTACKAIRBASE, 53, timer.getTime() + math.random(20, 30) )--+ math.random(900, 1200)
+timer.scheduleFunction(SEF_BLUEGENERAL_ATTACKAIRBASE, 53, timer.getTime() + math.random(20, 30) )--+ math.random(900, 1200)
 
 --////END MAIN
 -------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2704,7 +2707,6 @@ timer.scheduleFunction(SEF_BLUEGENERAL_ATTACKAIRBASE, 53, timer.getTime() + math
 -------------------------------------------------------------------------------------------------------------------------------------------------
 --////EVENT HANDLERS
 
---[[
 SEF_LANDINGHANDLER = {}
 function SEF_LANDINGHANDLER:onEvent(Event)
 
@@ -2822,9 +2824,9 @@ function SEF_CRASHEDHANDLER:onEvent(Event)
 				end
 				
 				if string.find(CrashedUnitGroupName, "USAF C%-130") then
-					trigger.action.outText("Our Hercules Has Crashed!", 15)					
+					--trigger.action.outText("Our Hercules Has Crashed!", 15)					
 				elseif string.find(CrashedUnitGroupName, "USAF UH%-60A") then
-					trigger.action.outText("Our Blackhawk Has Crashed!", 15)					
+					--trigger.action.outText("Our Blackhawk Has Crashed!", 15)					
 				else
 				end		
 			else
@@ -2874,7 +2876,6 @@ function SEF_KILLEDHANDLER:onEvent(Event)
 	end	
 end
 world.addEventHandler(SEF_KILLEDHANDLER)
-]]--
 
 SEF_BASECAPTUREDEVENTHANDLER = {}
 function SEF_BASECAPTUREDEVENTHANDLER:onEvent(Event)
@@ -2888,10 +2889,10 @@ function SEF_BASECAPTUREDEVENTHANDLER:onEvent(Event)
 			local CapturedBaseCapturingUnitTypeName 	= Event.initiator:getTypeName()	
 			
 			--////Announcement
-			if ( CapturedBaseCapturingUnitCoalition == 1 and timer.getAbsTime() >= CaptureMessageLockout + 5 ) then
+			if ( CapturedBaseCapturingUnitCoalition == 1 and timer.getAbsTime() >= CaptureMessageLockout + 300 ) then
 				trigger.action.outText(CapturedBaseName.." Has Been Captured By The Syrians", 15)
 				CaptureMessageLockout = timer.getAbsTime()				
-			elseif ( CapturedBaseCapturingUnitCoalition == 2 and timer.getAbsTime() >= CaptureMessageLockout + 5 ) then
+			elseif ( CapturedBaseCapturingUnitCoalition == 2 and timer.getAbsTime() >= CaptureMessageLockout + 300 ) then
 				trigger.action.outText(CapturedBaseName.." Has Been Captured By The Allies", 15)
 				CaptureMessageLockout = timer.getAbsTime()								
 			else		
@@ -2930,7 +2931,6 @@ function SEF_BASECAPTUREDEVENTHANDLER:onEvent(Event)
 end
 world.addEventHandler(SEF_BASECAPTUREDEVENTHANDLER)
 
---[[
 SEF_SHOTHANDLER = {}
 function SEF_SHOTHANDLER:onEvent(Event)
 	if Event.id == world.event.S_EVENT_SHOT then
@@ -3111,8 +3111,6 @@ function SEF_SHOTHANDLER:onEvent(Event)
 end
 world.addEventHandler(SEF_SHOTHANDLER)
 
-]]--
---[[
 SEF_ONDEADEVENTHANDLER = {}
 function SEF_ONDEADEVENTHANDLER:onEvent(Event)
 	
@@ -3149,9 +3147,8 @@ function SEF_ONDEADEVENTHANDLER:onEvent(Event)
 	end
 end
 world.addEventHandler(SEF_ONDEADEVENTHANDLER)
-]]--
+
 --////END EVENT HANDLERS
 --trigger.action.outText("Event Handlers Started", 15)
-env.info("Generals Complete", false)
-
+env.info("Surrexen's Event Handlers Loaded Successfully", false)
 -------------------------------------------------------------------------------------------------------------------------------------------------

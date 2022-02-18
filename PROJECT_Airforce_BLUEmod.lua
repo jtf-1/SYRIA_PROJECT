@@ -88,7 +88,7 @@ BluePatrolWaypointDistance = 40000
 BluePatrolWaypointInitial = 18520
 
 EngagementDistance = 90000
-BlueEngagementDistance = 40000
+BlueEngagementDistance = 80000
 
 CleanupTime = 180
 
