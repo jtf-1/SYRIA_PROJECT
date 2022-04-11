@@ -87,7 +87,11 @@ RedPatrolWaypointInitial = 18520
 BluePatrolWaypointDistance = 40000
 BluePatrolWaypointInitial = 18520
 
-EngagementDistance = 90000
+EngagementDistance = 90000 -- No longer utilized
+REDSQUADRON3ENGAGEDISTANCE = 90000 --Gamma    - Rene Mouawad  -> Al Qusayr  -> Shayrat    -> Tiyas        -> Palmyra
+REDSQUADRON4ENGAGEDISTANCE = 90000 --Delta    - Khalkhalah    -> Mezzeh     -> Al-Dumayr  -> An Nasiriyah -> Palmyra  
+REDSQUADRON5ENGAGEDISTANCE = 120000 --Epsilon  - Palmyra
+HARDSQUADRON2ENGAGEDISTANCE = 150000
 BlueEngagementDistance = 80000
 
 CleanupTime = 180
@@ -830,7 +834,7 @@ function SEF_REDSQUADRON3_SPAWN(DepartureAirbaseName, DestinationAirbaseName)
 															[5] = "SA Missiles",
 														}, -- end of ["noTargetTypes"]
 														["maxDistEnabled"] = true,
-														["maxDist"] = EngagementDistance,
+														["maxDist"] = REDSQUADRON3ENGAGEDISTANCE,
 													}, -- end of ["params"]
 												}, -- end of [3]
 												[4] = 
@@ -1226,7 +1230,7 @@ function SEF_REDSQUADRON4_SPAWN(DepartureAirbaseName, DestinationAirbaseName)
 															[5] = "SA Missiles",
 														}, -- end of ["noTargetTypes"]
 														["maxDistEnabled"] = true,
-														["maxDist"] = EngagementDistance,
+														["maxDist"] = REDSQUADRON4ENGAGEDISTANCE,
 													}, -- end of ["params"]
 												}, -- end of [3]
 												[4] = 
@@ -1624,7 +1628,7 @@ function SEF_REDSQUADRON5_SPAWN(DepartureAirbaseName, DestinationAirbaseName)
 															[5] = "SA Missiles",
 														}, -- end of ["noTargetTypes"]
 														["maxDistEnabled"] = true,
-														["maxDist"] = EngagementDistance,
+														["maxDist"] = REDSQUADRON5ENGAGEDISTANCE,
 													}, -- end of ["params"]
 												}, -- end of [3]
 												[4] = 
@@ -2027,19 +2031,19 @@ function SEF_REDSQUADRON3_DEPLOYMENT()
 
 	if ( Airbase.getByName("Rene Mouawad"):getCoalition() == 1 and Airbase.getByName("Al Qusayr"):getCoalition() == 1 and Airbase.getByName("Shayrat"):getCoalition() == 1 and Airbase.getByName("Tiyas"):getCoalition() == 1 ) then
 		--Case 1111: Set Gamma To Rene Mouawad and Patrol Rene Mouawad, Hold The Forward Line
-		GammaPrimaryAirbase = "Al Qusayr"
+		GammaPrimaryAirbase = "Shayrat"
 		GammaDestinationAirbase = "Rene Mouawad"
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() == 1 and Airbase.getByName("Al Qusayr"):getCoalition() == 1 and Airbase.getByName("Shayrat"):getCoalition() == 1 and Airbase.getByName("Tiyas"):getCoalition() ~= 1 ) then
 		--Case 1110: Set Gamma To Rene Mouawad and Patrol Rene Mouawad, Hold The Forward Line
-		GammaPrimaryAirbase = "Al Qusayr"
+		GammaPrimaryAirbase = "Shayrat"
 		GammaDestinationAirbase = "Tiyas"
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() == 1 and Airbase.getByName("Al Qusayr"):getCoalition() == 1 and Airbase.getByName("Shayrat"):getCoalition() ~= 1 and Airbase.getByName("Tiyas"):getCoalition() == 1 ) then
 		--Case 1101: Set Gamma To Rene Mouawad and Patrol Rene Mouawad, Hold The Forward Line
-		GammaPrimaryAirbase = "Al Qusayr"
+		GammaPrimaryAirbase = "Palmyra"
 		GammaDestinationAirbase = "Shayrat"
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() == 1 and Airbase.getByName("Al Qusayr"):getCoalition() == 1 and Airbase.getByName("Shayrat"):getCoalition() ~= 1 and Airbase.getByName("Tiyas"):getCoalition() ~= 1 ) then
 		--Case 1100: Set Gamma To Rene Mouawad and Patrol Rene Mouawad, Hold The Forward Line
-		GammaPrimaryAirbase = "Al Qusayr"
+		GammaPrimaryAirbase = "Palmyra"
 		GammaDestinationAirbase = "Tiyas"
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() == 1 and Airbase.getByName("Al Qusayr"):getCoalition() ~= 1 and Airbase.getByName("Shayrat"):getCoalition() == 1 and Airbase.getByName("Tiyas"):getCoalition() == 1 ) then
 		--Case 1011: Set Gamma To Rene Mouawad and Patrol Rene Mouawad, Hold The Forward Line
@@ -2047,31 +2051,31 @@ function SEF_REDSQUADRON3_DEPLOYMENT()
 		GammaDestinationAirbase = "Al Qusayr"
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() == 1 and Airbase.getByName("Al Qusayr"):getCoalition() ~= 1 and Airbase.getByName("Shayrat"):getCoalition() == 1 and Airbase.getByName("Tiyas"):getCoalition() ~= 1 ) then
 		--Case 1010: Set Gamma To Rene Mouawad and Patrol Rene Mouawad, Hold The Forward Line
-		GammaPrimaryAirbase = "Al Qusayr"
+		GammaPrimaryAirbase = "Shayrat"
 		GammaDestinationAirbase = "Tiyas"
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() == 1 and Airbase.getByName("Al Qusayr"):getCoalition() ~= 1 and Airbase.getByName("Shayrat"):getCoalition() ~= 1 and Airbase.getByName("Tiyas"):getCoalition() == 1 ) then
 		--Case 1001: Set Gamma To Rene Mouawad and Patrol Rene Mouawad, Hold The Forward Line
-		GammaPrimaryAirbase = "Tiyas"
+		GammaPrimaryAirbase = "Palmyra"
 		GammaDestinationAirbase = "Shayrat"
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() == 1 and Airbase.getByName("Al Qusayr"):getCoalition() ~= 1 and Airbase.getByName("Shayrat"):getCoalition() ~= 1 and Airbase.getByName("Tiyas"):getCoalition() ~= 1 ) then
 		--Case 1000: Set Gamma To Rene Mouawad and Patrol Rene Mouawad, Hold The Forward Line
-		GammaPrimaryAirbase = "Rene Mouawad"
+		GammaPrimaryAirbase = "Palmyra"
 		GammaDestinationAirbase = "Tiyas"	
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() ~= 1 and Airbase.getByName("Al Qusayr"):getCoalition() == 1 and Airbase.getByName("Shayrat"):getCoalition() == 1 and Airbase.getByName("Tiyas"):getCoalition() == 1 ) then
 		--Case 0111: Set Gamma To Al Qusayr and Patrol Rene Mouawad, Try To Recapture Rene Mouawad
-		GammaPrimaryAirbase = "Al Qusayr"
+		GammaPrimaryAirbase = "Shayrat"
 		GammaDestinationAirbase = "Rene Mouawad"	
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() ~= 1 and Airbase.getByName("Al Qusayr"):getCoalition() == 1 and Airbase.getByName("Shayrat"):getCoalition() == 1 and Airbase.getByName("Tiyas"):getCoalition() ~= 1 ) then
 		--Case 0110: Set Gamma To Al Qusayr and Patrol Rene Mouawad, Try To Recapture Rene Mouawad
-		GammaPrimaryAirbase = "Al Qusayr"
+		GammaPrimaryAirbase = "Shayrat"
 		GammaDestinationAirbase = "Tiyas"	
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() ~= 1 and Airbase.getByName("Al Qusayr"):getCoalition() == 1 and Airbase.getByName("Shayrat"):getCoalition() ~= 1 and Airbase.getByName("Tiyas"):getCoalition() == 1 ) then
 		--Case 0101: Set Gamma To Al Qusayr and Patrol Rene Mouawad, Try To Recapture Rene Mouawad
-		GammaPrimaryAirbase = "Al Qusayr"
+		GammaPrimaryAirbase = "Palmyra"
 		GammaDestinationAirbase = "Shayrat"	
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() ~= 1 and Airbase.getByName("Al Qusayr"):getCoalition() == 1 and Airbase.getByName("Shayrat"):getCoalition() ~= 1 and Airbase.getByName("Tiyas"):getCoalition() ~= 1 ) then
 		--Case 0100: Set Gamma To Al Qusayr and Patrol Rene Mouawad, Try To Recapture Rene Mouawad
-		GammaPrimaryAirbase = "Al Qusayr"
+		GammaPrimaryAirbase = "Palmyra"
 		GammaDestinationAirbase = "Tiyas"
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() ~= 1 and Airbase.getByName("Al Qusayr"):getCoalition() ~= 1 and Airbase.getByName("Shayrat"):getCoalition() == 1 and Airbase.getByName("Tiyas"):getCoalition() == 1 ) then
 		--Case 0011: Set Gamma To Shayrat and Patrol Al Qusayr, Try To Recapture Al Qusayr
@@ -2083,7 +2087,7 @@ function SEF_REDSQUADRON3_DEPLOYMENT()
 		GammaDestinationAirbase = "Tiyas"	
 	elseif ( Airbase.getByName("Rene Mouawad"):getCoalition() ~= 1 and Airbase.getByName("Al Qusayr"):getCoalition() ~= 1 and Airbase.getByName("Shayrat"):getCoalition() ~= 1 and Airbase.getByName("Tiyas"):getCoalition() == 1 ) then
 		--Case 0001: Set Gamma To Tiyas and Patrol Shayrat, Try To Recapture Shayrat
-		GammaPrimaryAirbase = "Tiyas"
+		GammaPrimaryAirbase = "Palmyra"
 		GammaDestinationAirbase = "Shayrat"
 	else
 		--Case 0000: Set Gamma To Palmyra And Patrol Tiyas
@@ -2515,7 +2519,7 @@ function SEF_HARDSQUADRON2_SPAWN(DepartureAirbaseName, DestinationAirbaseName)
                               [5] = "SA Missiles",
                             }, -- end of ["noTargetTypes"]
                             ["maxDistEnabled"] = true,
-                            ["maxDist"] = EngagementDistance,
+                            ["maxDist"] = HARDSQUADRON2ENGAGEDISTANCE,
                           }, -- end of ["params"]
                         }, -- end of [3]
                         [4] = 

@@ -135,6 +135,8 @@ function BuildMenus(AdvQty, MenuGroup, MenuName, SpawnBfmGroup) -- adds BFM/ACM 
 
   local AdvSuffix = "_" .. tostring(AdvQty)
   
+  MenuTop = MENU_COALITION:New(coalition.side.BLUE, "Moose Menu")
+  
   BfmMenuSize = MENU_GROUP:New(MenuGroup, MenuName, SpawnBfmGroup) -- GROUP Size
   
     BfmMenuWvr = MENU_GROUP:New(MenuGroup, "WVR", BfmMenuSize) -- WVR 
@@ -207,7 +209,7 @@ function BFMACM()
       if (group:IsPartlyOrCompletelyInZone(BfmAcmZoneMenu) or devMenuBfm) then -- if group has entered the BFM/ACM menu zone,  add the menus. Explicit add if not in zone and devMenuBfm is true.
         if _G["SpawnBfm" .. groupName] == nil then --check if menu already exists for client
           MenuGroup = group
-          _G["SpawnBfm" .. groupName] = MENU_GROUP:New( MenuGroup, "BFM/ACM" ) -- top menu
+          _G["SpawnBfm" .. groupName] = MENU_GROUP:New( MenuGroup, "BFM/ACM", MenuTop ) -- top menu
             BuildMenus(1, MenuGroup, "Single", _G["SpawnBfm" .. groupName]) -- Group size Single [spawn qty], [client group], [menu text], [menu name .. group name] 
             BuildMenus(2, MenuGroup, "Pair", _G["SpawnBfm" .. groupName]) -- Group size Pair
             BuildMenus(4, MenuGroup, "Division", _G["SpawnBfm" .. groupName]) -- Group size Division

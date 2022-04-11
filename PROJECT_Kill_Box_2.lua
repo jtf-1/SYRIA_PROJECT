@@ -37,7 +37,8 @@ local KILLBOX = {}
 
 --- Root menu.
 -- @field #table menuTop Root KILLTABLE top level menu
-KILLBOX.menuTop = MENU_COALITION:New(coalition.side.BLUE, "KILLBOX SPAWNS")
+MenuTop = MENU_COALITION:New(coalition.side.BLUE, "Moose Menu")
+KILLBOX.menuTop = MENU_COALITION:New(coalition.side.BLUE, "KILLBOX SPAWNS", MenuTop)
 --- Killbox selection menu.
 -- @field #table menuZones 
 KILLBOX.menuZones = {}

@@ -120,7 +120,8 @@ end
 ---------------------------------------------------------------------------------------------------
 --- Menu
 ---------------------------------------------------------------------------------------------------
-InterceptMenuTop = MENU_COALITION:New(coalition.side.BLUE, "CARRIER INTERCEPT SPAWNS")
+MenuTop = MENU_COALITION:New(coalition.side.BLUE, "Moose Menu")
+InterceptMenuTop = MENU_COALITION:New(coalition.side.BLUE, "CARRIER INTERCEPT SPAWNS", MenuTop)
 
 function addInterceptMenu()
 

@@ -27,10 +27,13 @@ csar.aircraftType["SA342L"] = 2
 csar.aircraftType["SA342M"] = 2
 csar.aircraftType["UH-1H"] = 8
 csar.aircraftType["Mi-8MT"] = 16
+csar.aircraftType["UH-64D"] = 1
+csar.aircraftType["Mi-24P"] = 8
+
 
 -- Prefix Settings - Only For helicopters
 csar.useprefix    = true  -- Use the Prefixed defined below, Requires Unit have the Prefix defined below 
-csar.csarPrefix = {"Paris", "London", "HMLA", "Mi-8", "UH-1H", "Ka-50"}
+csar.csarPrefix = {"Paris", "Rome", "HMLA", "Mi-8", "UH-1H", "Ka-50", "y", "z"}
 
 -- Fixed Unit Name.
 --Enable Csar Options for the units with the names in the list below                  

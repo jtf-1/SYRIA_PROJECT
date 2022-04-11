@@ -56,8 +56,8 @@ SyAAFAirforceGeneralName	= "General Issam Hallaq"
 
 BlueStrikeFrequencyMin 	= 900	
 BlueStrikeFrequencyMax 	= 1200	
-RedStrikeFrequencyMin 	= 1200	
-RedStrikeFrequencyMax 	= 2700
+RedStrikeFrequencyMin 	= 7200	
+RedStrikeFrequencyMax 	= 86400
 
 SYAAFAN26BGROUPNAME = ""
 IRIAFMI8GROUPNAME = ""
@@ -71,7 +71,7 @@ VVSTU22M3GROUPNAME = ""
 
 CaptureMessageLockout = 300
 
-AutomatedBlueStrikes = 1
+AutomatedBlueStrikes = 0
 
 CustomSoundsEnabled = 0
 
@@ -124,7 +124,7 @@ SEF_AIRBASES = {
 
 SEF_OFFLIMITSAIRBASESFORRED   = { "Aleppo", "Ramat David", "Megiddo", "Abu al-Duhur", "Adana Sakirpasa", "Bassel Al-Assad", "Gaziantep", "Hama", "Hatay", "Incirlik", "Jirah", "Kuweires", "Minakh", "Tabqa", "Taftanaz" }
               
-SEF_OFFLIMITSAIRBASESFORBLUE  = { "Palmyra", "Abu al-Duhur", "Adana Sakirpasa", "Bassel Al-Assad", "Gaziantep", "Hama", "Hatay", "Incirlik", "Jirah", "Kuweires", "Minakh", "Tabqa", "Taftanaz"  }
+SEF_OFFLIMITSAIRBASESFORBLUE  = { "Aleppo", "Palmyra", "Abu al-Duhur", "Adana Sakirpasa", "Bassel Al-Assad", "Gaziantep", "Hama", "Hatay", "Incirlik", "Jirah", "Kuweires", "Minakh", "Tabqa", "Taftanaz"  }
   							
 CurrentRedAirbases ={}						-- All current red airbases
 CurrentBlueAirbases ={}						-- All current blue airbases
@@ -2697,7 +2697,7 @@ env.info("Surrexen's Event Handlers Loading", false)
 
 --////END TEST CASE
 
-timer.scheduleFunction(SEF_REDGENERAL_ATTACKAIRBASE, 53, timer.getTime() + math.random(20, 30) )--+ math.random(900, 1200)
+timer.scheduleFunction(SEF_REDGENERAL_ATTACKAIRBASE, 53, timer.getTime() + math.random(1800, 5400) )--+ math.random(1800, 5400)
 timer.scheduleFunction(SEF_BLUEGENERAL_ATTACKAIRBASE, 53, timer.getTime() + math.random(20, 30) )--+ math.random(900, 1200)
 
 --////END MAIN
@@ -2889,6 +2889,7 @@ function SEF_BASECAPTUREDEVENTHANDLER:onEvent(Event)
 			local CapturedBaseCapturingUnitTypeName 	= Event.initiator:getTypeName()	
 			
 			--////Announcement
+			--[[
 			if ( CapturedBaseCapturingUnitCoalition == 1 and timer.getAbsTime() >= CaptureMessageLockout + 300 ) then
 				trigger.action.outText(CapturedBaseName.." Has Been Captured By The Syrians", 15)
 				CaptureMessageLockout = timer.getAbsTime()				
@@ -2897,7 +2898,7 @@ function SEF_BASECAPTUREDEVENTHANDLER:onEvent(Event)
 				CaptureMessageLockout = timer.getAbsTime()								
 			else		
 			end
-			
+			]]--
 			if ( string.find(CapturedBaseCapturingUnitName, "Navy SEALS") or 
 				 string.find(CapturedBaseCapturingUnitName, "DELTA Force") or 
 				 string.find(CapturedBaseCapturingUnitName, "USACE 1st") or 

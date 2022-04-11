@@ -154,7 +154,6 @@ REDCAPTURETEAM = SPAWN:New("rSAM-BASECAP")
 --REDCAPTURETEAM = SPAWN:InitRandomizeTemplate(REDCAPTURELIST)
 REDCAPNAME = "rSAM-BASECAP"
 BLUECAPTURETEAM = SPAWN:New("bSAM-BASECAP")
-BLUELOGISTICS = SPAWNSTATIC:NewFromStatic( "logistic", country.id.USA ):InitNamePrefix("logistic")
 
 function SEF_PERSISTENTAIRBASES(AirbaseList)
   SyriaAirbases = {}
@@ -179,10 +178,6 @@ function SEF_CAPAIRBASE(Airbase, Coalition)
   elseif ( Coalition == 2 ) then
     BlueHeloSpawnVec2 = ZONE:FindByName(Airbase.." LZ Blue"):GetVec2()
     BLUECAPTURETEAM:SpawnFromVec2(BlueHeloSpawnVec2)    
-    local BlueLogiSpawn = ZONE:FindByName(Airbase.." pickzone")
-    local logi = BLUELOGISTICS:SpawnFromZone(BlueLogiSpawn, 0)
-    BlueLogiSpawn:Scan( {Object.Category.STATIC} , {Unit.Category.GROUND_UNIT} )
-    BASE:E(BlueLogiSpawn.ScanData)
   else
   end
 end

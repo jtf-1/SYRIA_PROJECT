@@ -3814,6 +3814,8 @@ end
 --////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 --////Radio Menu 
 
+_SETTINGS:SetPlayerMenuOff()
+
 function SEF_RadioMenuSetup()
 	--////Set Up Menu
 	-- table missionCommands.addSubMenuForCoalition(enum coalition.side, string name , table path)
@@ -3821,13 +3823,15 @@ function SEF_RadioMenuSetup()
 	-- table missionCommands.addCommandForCoalition(enum coalition.side, string name, table/nil path, function functionToRun , any anyArguement)
    
     --////Setup Top Level Menus
+   JTFZonesMain = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "ED Menu", nil)
+    
+   DynamicZoneMain = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Dynamic Zone", JTFZonesMain)
    
-   DynamicZoneMain = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Dynamic Zone", nil)
    
    --BFMACMMENU = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "BFM/ACM Options", nil)
 
 	--////Setup Submenu For Support Requests
-			SupportMenuMain = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Request Support", DynamicZoneMain)
+	SupportMenuMain = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Request Support", DynamicZoneMain)
 	SupportMenuAbort = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Abort Support", DynamicZoneMain)
 	SupportMenuCAP  = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Request Fighter Support", SupportMenuMain)
 	SupportMenuCAS  = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Request Close Air Support", SupportMenuMain)
@@ -3859,11 +3863,11 @@ function SEF_RadioMenuSetup()
 	SyriaBLUECAPToggle = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Toggle Allied AI CAP Flights", SyriaCAPOptions, function() SEF_BLUESQUADRONSTOGGLE() end, nil)
 	SyriaHARDCAPToggle = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Toggle HARD RED CAP Flights", SyriaCAPOptions, function() SEF_HARDSQUADRONSTOGGLE() end, nil)  
 	--SyriaToggleCustomSounds = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Toggle Custom Sounds", SyriaSNDOptions, function() SEF_ToggleCustomSounds() end, nil)	
-	ScarletDawnClearCarrierFighters  = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Clear Carrier Deck Of Fighters", nil, function() SEF_ClearAIFightersFromCarrierDeck() end, nil)
+	--ScarletDawnClearCarrierFighters  = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Clear Carrier Deck Of Fighters", JTFZonesMain, function() SEF_ClearAIFightersFromCarrierDeck() end, nil)
 	--ScarletDawnClearCarrierTankers  = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Clear Carrier Deck Of Tankers", SyriaOptions, function() SEF_ClearAITankersFromCarrierDeck() end, nil)
 	--ScarletDawnPhaseCheck  = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Check Battle Phase", SyriaOptions, function() SEF_BattlePhaseCheck() end, nil)
 	--ScarletDawnSkipScenario  = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Skip This Mission", SyriaOptions, function() SEF_SkipScenario() end, nil)	
-  BFMAWACSOptions = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "BFM AWACS Options", nil)
+  BFMAWACSOptions = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "BFM AWACS Options", JTFZonesMain)
   ProjectCLEARFIGHTERS = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Remove All AI BFM Fighters", BFMAWACSOptions, function() SEF_CLEARALLRED() end, nil)
   ProjectSPAWNBLUEAWACS = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Spawn BFM Blue AWACS", BFMAWACSOptions, function() SEF_SPAWNBLUEAWACS() end, nil)
   ProjectCLEARBLUEAWACS = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Clear BFM Blue AWACS", BFMAWACSOptions, function() SEF_CLEARBLUEAWACS() end, nil)
