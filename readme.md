@@ -88,9 +88,6 @@ FARP
 Paris: 172 Mhz AM
 Rome: 173 Mhz AM
 
-===============
-F10 RADIO MENU
-===============
 DSMC
 =====
 -- CTLD/CSAR can be found if in a Helo or Hercules as well as the force save option (expect stutters on save)
