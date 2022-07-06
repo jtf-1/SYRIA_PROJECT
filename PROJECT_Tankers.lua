@@ -4,13 +4,14 @@ env.info("Tankers Loading", false)
 -- AWACS SPAWN --
 -----------------
 SPAWN:New('blueEWR_AWACS_MAGIC'):InitLimit(1,99):SpawnScheduled(60,1):InitRepeatOnLanding()
-SPAWN:New('blueEWR_AWACS_DARKSTAR'):InitLimit(1,99):SpawnScheduled(60,1):InitRepeatOnLanding()
+--SPAWN:New('blueEWR_AWACS_DARKSTAR'):InitLimit(1,99):SpawnScheduled(60,1):InitRepeatOnLanding()
 --SPAWN:New('AWACS_BEAR'):InitLimit(1,99):SpawnScheduled(60,1):InitRepeatOnEngineShutDown()
 
 
 ------------------
 -- TANKER START --
 ------------------
+--[[
 local Tanker_KC135MPRS_Shell2 = SPAWN
    :New( "Tanker_KC135MPRS_Shell2" )
    :InitLimit( 1, 99 )
@@ -70,7 +71,7 @@ local Tanker_KC135_Texaco3 = SPAWN
      Texaco3:CommandSetCallsign(1,3)
      end 
      )
-     
+]]--  
 local Tanker_C130_Arco3 = SPAWN
    :New( "Tanker_C130_Arco3" )
    :InitLimit( 1, 99 )
